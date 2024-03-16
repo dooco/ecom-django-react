@@ -157,7 +157,7 @@ USE_TZ = True
 
 
 if DEVELOPMENT_MODE is True:
-    STATIC_URL = "static/"
+    STATIC_URL = "/static/"
     STATIC_ROOT = BASE_DIR / "static"
     MEDIA_URL = "media/"
     MEDIA_ROOT = BASE_DIR / "media"
@@ -175,7 +175,7 @@ else:
     AWS_S3_CUSTOM_DOMAIN = os.environ.get("AWS_S3_CUSTOM_DOMAIN")
     STORAGES = {
         "default": {
-            "BACKEND": "custom_storages.CustomS3Boto3Storage",
+            "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
             "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"},
         }
     }
@@ -200,7 +200,6 @@ DJOSER = {
     "PASSWORD_RESET_CONFIRM_URL": "password-reset/{uid}/{token}",
     "SEND_ACTIVATION_EMAIL": True,
     "ACTIVATION_URL": "activation/{uid}/{token}",
-    # "EMAIL": {"activation": "users.emails.UserActivationEmail"},
     "USER_CREATE_PASSWORD_RETYPE": True,
     "PASSWORD_RESET_CONFIRM_RETYPE": True,
     "TOKEN_MODEL": None,
