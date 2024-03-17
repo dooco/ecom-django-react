@@ -157,7 +157,7 @@ USE_TZ = True
 
 
 if DEVELOPMENT_MODE is True:
-    STATIC_URL = "/static/"
+    STATIC_URL = "static/"
     STATIC_ROOT = BASE_DIR / "static"
     MEDIA_URL = "media/"
     MEDIA_ROOT = BASE_DIR / "media"
@@ -236,13 +236,6 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("JWT",),
 }
 
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, "build/static")]
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
-
-# BT_MERCHANT_ID = "5yyrbv3cbp94dby3"
-# BT_PUBLIC_KEY = "x3mmt6vrf9b9552m"
-# BT_PRIVATE_KEY = "9ccf1a80163239d6f2ef1156c950c62a"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
