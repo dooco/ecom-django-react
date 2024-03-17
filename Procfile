@@ -1,0 +1,1 @@
+web: gunicorn ecom-django-react.wsgi:application
