@@ -1,1 +1,1 @@
-web: gunicorn ecom-django-react.wsgi:application
+web: gunicorn  --worker-tmp-dir /dev/shm ecom-django-react.wsgi
