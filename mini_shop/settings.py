@@ -112,8 +112,8 @@ DEFAULT_FROM_EMAIL = os.environ.get("AWS_SES_FROM_EMAIL")
 
 AWS_SES_ACCESS_KEY_ID = os.environ.get("AWS_SES_ACCESS_KEY_ID")
 AWS_SES_SECRET_ACCESS_KEY = os.environ.get("AWS_SES_SECRET_ACCESS_KEY")
-AWS_SES_REGION_NAME = "eu-west-1"
-AWS_SES_REGION_ENDPOINT = "email.eu-west-1.amazonaws.com"
+AWS_SES_REGION_NAME = os.environ.get("AWS_SES_REGION_NAME")
+AWS_SES_REGION_ENDPOINT = f"email.{AWS_SES_REGION_NAME}.amazonaws.com"
 AWS_SES_FROM_EMAIL = os.environ.get("AWS_SES_FROM_EMAIL")
 USE_SES_V2 = True
 
@@ -157,9 +157,9 @@ USE_TZ = True
 
 
 if DEVELOPMENT_MODE is True:
-    STATIC_URL = "static/"
+    STATIC_URL = "/static/"
     STATIC_ROOT = BASE_DIR / "static"
-    MEDIA_URL = "media/"
+    MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
 
 else:
@@ -225,7 +225,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
 SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ["first_name", "last_name"]
 
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get("FACEBOOK_AUTH_KEY")
-SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get("FACEBOOK_AUTH_SECRET_KEY")
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get("FACEBOOK_AUTH_SECRET")
 SOCIAL_AUTH_FACEBOOK_SCOPE = ["email"]
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {"fields": "email, first_name, last_name"}
 
