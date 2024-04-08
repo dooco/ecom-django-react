@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.environ.get(
-    "DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,seashell-app-p2c8o.ondigitalocean.app'"
+    "DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,api.stackandstash.com"
 ).split(",")
 
 
